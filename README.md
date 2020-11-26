@@ -21,7 +21,7 @@ private static String StartCourse(){
 ## For windows users: 👨‍💻 👩‍💻
 ➡️ Just double-click on the 'CLICK-ME.bat' file in order to execute the '.jar' file.
 ## For Linux users: 👨‍💻 👩‍💻
-➡️ Open you terminal in the directory of the '.jar' file and write:
+➡️ Open your terminal in the directory of the '.jar' file and write:
 
 ```
 java -jar FacuFalcone_EscuelitaSomosPNT.jar
