@@ -36,6 +36,7 @@ public class LiquidProduct extends Product {
 
     /**
      * Builds the entity with 1 param.
+     * 
      * @param name Name of the entity.
      */
     public LiquidProduct(String name) {
@@ -44,18 +45,20 @@ public class LiquidProduct extends Product {
 
     /**
      * Builds the entity with 2 params.
-     * @param name Name of the entity.
+     * 
+     * @param name  Name of the entity.
      * @param price Price of the entity.
      */
     public LiquidProduct(String name, int price) {
 	   super(name, price);
     }
-    
+
     /**
      * Builds the entity with 3 params.
-     * @param name Name of the entity.
+     * 
+     * @param name  Name of the entity.
      * @param price Price of the entity.
-     * @param size Size of the entity.
+     * @param size  Size of the entity.
      */
     public LiquidProduct(String name, int price, double size) {
 	   this(name, price);
@@ -86,19 +89,21 @@ public class LiquidProduct extends Product {
      * @return the size
      */
     public double getSize() {
-        return size;
+	   return size;
     }
 
     /**
      * @param size the size to set
      */
     public void setSize(double size) {
-        this.size = size;
+	   if (size > 0) {
+		  this.size = size;
+	   }
     }
 
     @Override
     public int compareTo(Product arg0) {
-	   int result = this.getPrice()-arg0.getPrice();
+	   int result = this.getPrice() - arg0.getPrice();
 	   return result;
     }
 

@@ -20,12 +20,12 @@ package logic.Abstract;
 /**
  * @author FacuFalcone - CaidevOficial
  */
-public abstract class Product implements Comparable<Product>{
+public abstract class Product implements Comparable<Product> {
 
     // Attributes
     protected String name;
     protected int price;
-    
+
     /**
      * Builds the entity with default params.
      */
@@ -36,16 +36,18 @@ public abstract class Product implements Comparable<Product>{
 
     /**
      * Builds the entity with 1 param.
+     * 
      * @param name Name of the entity.
      */
     public Product(String name) {
 	   this();
 	   this.name = name;
     }
-    
+
     /**
      * Builds the entity with 2 params.
-     * @param name Name of the entity.
+     * 
+     * @param name  Name of the entity.
      * @param price Price of the entity.
      */
     public Product(String name, int price) {
@@ -57,40 +59,45 @@ public abstract class Product implements Comparable<Product>{
      * @return the name
      */
     public String getName() {
-        return name;
+	   return name;
     }
 
     /**
      * @return the price
      */
     public int getPrice() {
-        return price;
+	   return price;
     }
 
     /**
      * @param name the name to set
      */
     public void setName(String name) {
-        this.name = name;
+	   if (name != null) {
+		  this.name = name;
+	   }
     }
 
     /**
      * @param price the price to set
      */
     public void setPrice(int price) {
-        this.price = price;
+	   if (price >= 0) {
+		  this.price = price;
+	   }
     }
-    
+
     @Override
     public abstract String toString();
 
     @Override
     /**
      * Compares the prices of the actual product with another one.
+     * 
      * @return A negative number if the this.price is smaller than arg0.price, else return a positive number or zero if equal..
      */
     public int compareTo(Product arg0) {
-	   int result = this.getPrice()-arg0.getPrice();
+	   int result = this.getPrice() - arg0.getPrice();
 	   return result;
     }
 }

@@ -26,7 +26,7 @@ public class SolidProduct extends Product {
 
     // Atributes
     String size;
-    
+
     /**
      * Builds the entity with default params.
      */
@@ -37,16 +37,18 @@ public class SolidProduct extends Product {
 
     /**
      * Builds the entity with 1 param.
+     * 
      * @param name Name of the entity.
      */
     public SolidProduct(String name) {
 	   this();
 	   this.name = name;
     }
-    
+
     /**
      * Builds the entity with 2 params.
-     * @param name Name of the entity.
+     * 
+     * @param name  Name of the entity.
      * @param price Price of the entity.
      */
     public SolidProduct(String name, int price) {
@@ -56,9 +58,10 @@ public class SolidProduct extends Product {
 
     /**
      * Builds the entity with 3 params.
-     * @param name Name of the entity.
+     * 
+     * @param name  Name of the entity.
      * @param price Price of the entity.
-     * @param size Size of the entity.
+     * @param size  Size of the entity.
      */
     public SolidProduct(String name, int price, String size) {
 	   this(name, price);
@@ -79,7 +82,7 @@ public class SolidProduct extends Product {
      * @return the size
      */
     public String getSize() {
-        return size;
+	   return size;
     }
 
     @Override
@@ -96,7 +99,9 @@ public class SolidProduct extends Product {
      * @param size the size to set
      */
     public void setSize(String size) {
-        this.size = size;
+	   if (size != null) {
+		  this.size = size;
+	   }
     }
 
     @Override
@@ -105,13 +110,13 @@ public class SolidProduct extends Product {
 	   String size = getSize();
 	   int price = getPrice();
 	   String message = "Nombre: " + name + " /// Precio: $" + price + " /// Unidad de venta: " + size;
-	   
+
 	   return message;
     }
 
     @Override
     public int compareTo(Product arg0) {
-	   int result = this.getPrice()-arg0.getPrice();
+	   int result = this.getPrice() - arg0.getPrice();
 	   return result;
     }
 }

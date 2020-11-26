@@ -78,7 +78,9 @@ public class DrinkProduct extends Product implements Comparable<Product> {
      * @param size the size to set
      */
     public void setSize(double size) {
-	   this.size = size;
+	   if (size > 0) {
+		  this.size = size;
+	   }
     }
 
     @Override

@@ -108,9 +108,9 @@ public class MainPNT {
      * @param args
      */
     public static void main(String[] args) {
-	   Harcode(productList);
-	   ShowProducts(productList);
-	   SortByPrice(productList, 1);
-	   SortByPrice(productList, 0);
+	   Harcode(productList); // Harcode the products into the linkedlist
+	   ShowProducts(productList); // Shows the entire list.
+	   SortByPrice(productList, 1); // Returns the most Expensive
+	   SortByPrice(productList, 0); // Returns the most cheaper
     }
 }
