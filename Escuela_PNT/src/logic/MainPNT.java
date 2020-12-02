@@ -38,20 +38,10 @@ public class MainPNT {
      */
     public static void Harcode(LinkedList<Product> productList) {
 
-	   String name[] = { "Coca-Cola Zero", "Coca-Cola", "Shampoo Sedal", "Frutillas" };
-	   int price[] = { 20, 18, 19, 64 };
-	   double size[] = { 1.5, 1.5, 0.9 };
-	   if (productList != null) {
-		  for (int i = 0; i < 4; i++) {
-			 if (i < 2) {
-				productList.add(new DrinkProduct(name[i], price[i], size[i]));
-			 } else if (i < 3) {
-				productList.add(new LiquidProduct(name[i], price[i], size[i]));
-			 } else {
-				productList.add(new SolidProduct(name[i], price[i], "kilo"));
-			 }
-		  }
-	   }
+	   productList.add(new DrinkProduct("Coca-Cola Zero", 20, 1.5));
+	   productList.add(new DrinkProduct("Coca-Cola", 18, 1.5));
+	   productList.add(new LiquidProduct("Shampoo Sedal", 19, 0.9));
+	   productList.add(new SolidProduct("Frutillas", 64, "kilo"));
     }
 
     /**

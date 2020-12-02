@@ -31,7 +31,8 @@ public class SolidProduct extends Product {
      * Builds the entity with default params.
      */
     public SolidProduct() {
-	   super();
+	   this.name = "";
+	   this.price = 0;
 	   this.size = "";
     }
 
@@ -70,12 +71,12 @@ public class SolidProduct extends Product {
 
     @Override
     public String getName() {
-	   return super.getName();
+	   return name;
     }
 
     @Override
     public int getPrice() {
-	   return super.getPrice();
+	   return price;
     }
 
     /**
@@ -85,14 +86,24 @@ public class SolidProduct extends Product {
 	   return size;
     }
 
-    @Override
+    /**
+     * Sets the name of the entity.
+     * @param name the name to set.
+     */
     public void setName(String name) {
-	   super.setName(name);
+	   if(name!=null) {
+		  this.name = name;
+	   }
     }
 
-    @Override
+    /**
+     * Sets the price of the entity.
+     * @param price the price to set.
+     */
     public void setPrice(int price) {
-	   super.setPrice(price);
+	   if(price>=0) {
+		  this.price = price;
+	   }
     }
 
     /**

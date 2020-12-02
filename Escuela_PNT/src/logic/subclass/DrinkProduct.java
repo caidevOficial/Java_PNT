@@ -30,7 +30,8 @@ public class DrinkProduct extends Product implements Comparable<Product> {
      * Builds the entity with default params.
      */
     public DrinkProduct() {
-	   super();
+	   this.name = "";
+	   this.size = 0;
 	   this.size = 0;
     }
 
@@ -84,23 +85,39 @@ public class DrinkProduct extends Product implements Comparable<Product> {
     }
 
     @Override
+    /**
+     * @return the name.
+     */
     public String getName() {
-	   return super.getName();
+	   return name;
     }
 
     @Override
+    /**
+     * @return the price.
+     */
     public int getPrice() {
-	   return super.getPrice();
+	   return price;
     }
 
-    @Override
+    /**
+     * Sets the name of the entity.
+     * @param name the name to set.
+     */
     public void setName(String name) {
-	   super.setName(name);
+	   if(name!=null) {
+		  this.name = name;
+	   }
     }
 
-    @Override
+    /**
+     * Sets the price of the entity.
+     * @param price the price to set.
+     */
     public void setPrice(int price) {
-	   super.setPrice(price);
+	   if(price>=0) {
+		  this.price = price;
+	   }
     }
 
     @Override

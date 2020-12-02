@@ -31,7 +31,9 @@ public class LiquidProduct extends Product {
      * Builds the entity with default params.
      */
     public LiquidProduct() {
-	   super();
+	   this.name = "";
+	   this.price = 0;
+	   this.size = 0;
     }
 
     /**
@@ -40,7 +42,7 @@ public class LiquidProduct extends Product {
      * @param name Name of the entity.
      */
     public LiquidProduct(String name) {
-	   super(name);
+	   this.name = name;
     }
 
     /**
@@ -50,7 +52,8 @@ public class LiquidProduct extends Product {
      * @param price Price of the entity.
      */
     public LiquidProduct(String name, int price) {
-	   super(name, price);
+	   this(name);
+	   this.price = price;
     }
 
     /**
@@ -66,23 +69,19 @@ public class LiquidProduct extends Product {
     }
 
     @Override
+    public int compareTo(Product arg0) {
+	   int result = this.getPrice() - arg0.getPrice();
+	   return result;
+    }
+
+    @Override
     public String getName() {
-	   return super.getName();
+	   return name;
     }
 
     @Override
     public int getPrice() {
-	   return super.getPrice();
-    }
-
-    @Override
-    public void setName(String name) {
-	   super.setName(name);
-    }
-
-    @Override
-    public void setPrice(int price) {
-	   super.setPrice(price);
+	   return price;
     }
 
     /**
@@ -93,18 +92,29 @@ public class LiquidProduct extends Product {
     }
 
     /**
+     * Set the name of the entity.
+     * @param name the name to set.
+     */
+    public void setName(String name) {
+	   this.name = name;
+    }
+
+    /**
+     * Sets the price of the entity.
+     * @param price the price to set.
+     */
+    public void setPrice(int price) {
+	   this.price = price;
+    }
+
+    /**
+     * Sets the size of the entity.
      * @param size the size to set
      */
     public void setSize(double size) {
 	   if (size > 0) {
 		  this.size = size;
 	   }
-    }
-
-    @Override
-    public int compareTo(Product arg0) {
-	   int result = this.getPrice() - arg0.getPrice();
-	   return result;
     }
 
     @Override

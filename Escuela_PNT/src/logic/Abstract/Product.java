@@ -25,68 +25,11 @@ public abstract class Product implements Comparable<Product> {
     // Attributes
     protected String name;
     protected int price;
+    
 
-    /**
-     * Builds the entity with default params.
-     */
-    public Product() {
-	   this.name = "";
-	   this.price = 0;
-    }
-
-    /**
-     * Builds the entity with 1 param.
-     * 
-     * @param name Name of the entity.
-     */
-    public Product(String name) {
-	   this();
-	   this.name = name;
-    }
-
-    /**
-     * Builds the entity with 2 params.
-     * 
-     * @param name  Name of the entity.
-     * @param price Price of the entity.
-     */
-    public Product(String name, int price) {
-	   this(name);
-	   this.price = price;
-    }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-	   return name;
-    }
-
-    /**
-     * @return the price
-     */
-    public int getPrice() {
-	   return price;
-    }
-
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-	   if (name != null) {
-		  this.name = name;
-	   }
-    }
-
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(int price) {
-	   if (price >= 0) {
-		  this.price = price;
-	   }
-    }
-
+    public abstract int getPrice();
+    public abstract String getName();
+    
     @Override
     public abstract String toString();
 
