@@ -24,15 +24,13 @@ import logic.Abstract.Product;
  */
 public class DrinkProduct extends Product implements Comparable<Product> {
 
-    double size;
+    private double size;
 
     /**
      * Builds the entity with default params.
      */
     public DrinkProduct() {
-	   this.name = "";
-	   this.size = 0;
-	   this.size = 0;
+	   
     }
 
     /**

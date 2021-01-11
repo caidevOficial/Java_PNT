@@ -17,7 +17,9 @@
 
 package logic;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import logic.Abstract.Product;
 import logic.subclass.DrinkProduct;
@@ -30,13 +32,14 @@ import logic.subclass.SolidProduct;
 public class MainPNT {
 
     // LL for store the products
-    public static LinkedList<Product> productList = new LinkedList<Product>();
+    public static List<Product> productList = new ArrayList<Product>();
 
     /**
-     * Harcodes the products in the LinkedList
+     * Harcodes the products in the List
+     * 
      * @param productList
      */
-    public static void Harcode(LinkedList<Product> productList) {
+    public static void Harcode(List<Product> productList) {
 
 	   productList.add(new DrinkProduct("Coca-Cola Zero", 20, 1.5));
 	   productList.add(new DrinkProduct("Coca-Cola", 18, 1.5));
@@ -46,9 +49,10 @@ public class MainPNT {
 
     /**
      * Shows in console the info of the products.
+     * 
      * @param productList
      */
-    public static void ShowProducts(LinkedList<Product> productList) {
+    public static void ShowProducts(List<Product> productList) {
 
 	   if (productList != null) {
 		  for (Product product : productList) {
@@ -60,37 +64,21 @@ public class MainPNT {
 
     /**
      * Prints in console the expensive or cheaper product.
-     * @param productList LinkedList ff products.
-     * @param order Order to print. 1 for expensive, 0 for cheapper.
+     * 
+     * @param productList List ff products.
      * @return Return true if can show at least 1 product, False for error.
      */
-    public static boolean SortByPrice(LinkedList<Product> productList, int order) {
-	   String name;
+    public static boolean SortByPrice(List<Product> productList) {
 	   boolean sortOne = false;
-	   Product product1 = null;
-	   Product product2 = null;
-
-	   if (productList != null) {
-		  for (int i = 0; i < (productList.size() - 1); i++) {
-			 for (int j = i + 1; j < productList.size(); j++) {
-				product1 = productList.get(i);
-				product2 = productList.get(j);
-				if ((order == 1 && product1.compareTo(product2) < 0) || 
-				    (order == 0 && product1.compareTo(product2) > 0)) {
-				    productList.set(i, product2);
-				    productList.set(j, product1);
-				    sortOne = true;
-				}
-			 }
-		  }
-		  name = productList.getFirst().getName();
-		  if (order == 1) {
-			 System.out.printf("Producto más caro: %s\n", name);
-		  } else {
-			 System.out.printf("Producto más barato: %s\n", name);
-		  }
-	   }
 	   
+	   if (productList != null) {
+
+		  Collections.sort(productList);
+		  System.out.printf("Producto más barato: %s\n", productList.get(0).getName());
+		  System.out.printf("Producto más caro: %s\n", productList.get(3).getName());
+		  sortOne = true;
+	   }
+
 	   return sortOne;
     }
 
@@ -98,9 +86,8 @@ public class MainPNT {
      * @param args
      */
     public static void main(String[] args) {
-	   Harcode(productList); // Harcode the products into the linkedlist
-	   ShowProducts(productList); // Shows the entire list.
-	   SortByPrice(productList, 1); // Returns the most Expensive
-	   SortByPrice(productList, 0); // Returns the most cheaper
+	   Harcode(productList);
+	   ShowProducts(productList);
+	   SortByPrice(productList);
     }
 }

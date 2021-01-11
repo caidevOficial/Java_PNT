@@ -25,15 +25,13 @@ import logic.Abstract.Product;
 public class SolidProduct extends Product {
 
     // Atributes
-    String size;
+    private String size;
 
     /**
      * Builds the entity with default params.
      */
     public SolidProduct() {
-	   this.name = "";
-	   this.price = 0;
-	   this.size = "";
+	   
     }
 
     /**

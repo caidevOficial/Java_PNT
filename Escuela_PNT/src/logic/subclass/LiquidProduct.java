@@ -25,15 +25,13 @@ import logic.Abstract.Product;
 public class LiquidProduct extends Product {
 
     // Atributes
-    protected double size;
+    private double size;
 
     /**
      * Builds the entity with default params.
      */
     public LiquidProduct() {
-	   this.name = "";
-	   this.price = 0;
-	   this.size = 0;
+	   
     }
 
     /**
