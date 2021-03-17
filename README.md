@@ -1,4 +1,14 @@
-<td><a href="https://somospnt.com/" target="_blank"><img alt="Somos PNT" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo-somospnt-azul.png" width="610px"/></td></br>
+<table>
+  <tr>
+    <td>
+      <a href="https://somospnt.com/" target="_blank"><img alt="Somos PNT" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo-somospnt-azul.png" height="100px"/>
+    </td>
+    <td>
+      <img alt="Java" src="https://github.com/caidevOficial/Logos/raw/master/Lenguajes/java.png" height="100px"/>
+    </td>
+  </tr>
+</table>
+</br>
 
 ## Escuelita SOMOS PNT.
 <a href="https://github.com/caidevOficial/CUViLo_Java">
